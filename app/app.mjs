@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Dashboard from './datos/dashboard';
 import AddIncome from './datos/addIncome.mjs';
-import AddExpense from './datos/addExpense.mjs';
+import AddExpense from './datos/addAvailable.mjs';
 import AddInvestment from './datos/addInvestment.mjs';
 
 function App() {

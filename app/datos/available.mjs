@@ -6,4 +6,4 @@ const ExpenseSchema = new mongoose.Schema({
  date: Date
 });
 
-module.exports = mongoose.model('Expense', ExpenseSchema);
+module.exports = mongoose.model('Available', ExpenseSchema);

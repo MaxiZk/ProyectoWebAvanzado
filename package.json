@@ -1,0 +1,17 @@
+{
+"main": "/codigo/main.mjs",
+"scripts": {
+   "build": "tsc",
+   "start": "node /codigo/main.mjs"
+},
+"author": "",
+"license": "ISC",
+"devDependencies": {
+   "typescript": "^4.4.2"
+},
+"dependencies": {
+   "@types/node": "^16.7.0",
+   "react-router-dom": "^6.21.1"
+},
+"types": "dist/index.d.ts"
+}

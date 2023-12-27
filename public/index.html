@@ -23,8 +23,8 @@ function Dashboard() {
 function AddIncome() {
     return <h2>Add Income</h2>;
 }
-function AddExpense() {
-    return <h2>Add Expense</h2>;
+function addAvailable() {
+    return <h2>addAvailable</h2>;
 }
 function AddInvestment() {
     return <h2>Add Investment</h2>;
@@ -42,7 +42,7 @@ function App() {
                             <Link to="/app/datos/addIncome.mjs">Add Income</Link>
                         </li>
                         <li>
-                            <Link to="/app/datos/addExpense.mjs">Add Expense</Link>
+                            <Link to="/app/datos/addAvailable">Add Available</Link>
                         </li>
                         <li>
                             <Link to="/app/datos/addInvestment.mjs">Add Investment</Link>
@@ -53,7 +53,7 @@ function App() {
                 <Switch>
                     <Route path="/app/datos/dashboard.js" exact component={Dashboard} />
                     <Route path="/app/datos/addIncome.mjs" component={AddIncome} />
-                    <Route path="/app/datos/addExpense.mjs" component={AddExpense} />
+                    <Route path="/app/datos/addExpense.mjs" component={AddAvailable} />
                     <Route path="/app/datos/addInvestment.mjs" component={AddInvestment} />
                 </Switch>
             </div>

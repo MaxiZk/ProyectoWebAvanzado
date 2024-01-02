@@ -3,64 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación Financiera</title>
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/react-router-dom@5"></script>
-    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/ProyectoWebAvanzado/app/server.mjs">
 </head>
 <body>
-    <div id="root"></div>
+    <header>
+    <nav> 
+        <ul> 
+            <li><a href="#home">Homne</a>
+            </li> <li><a href="#dashboard">Finanzas</a>
+            </li> <li><a href="#inversioes">Inversiones</a>
+            </li> <li><a href="#contacto">Contacto</a></li> 
+        </ul> 
+    </nav>
+</header>
 
-    <script type="text/babel">
-        import React from 'react';
-        import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-        import ReactDOM from 'react-dom';
-        import App from '/app/app.mjs';
-function Dashboard() {
-    return <h2>Dashboard</h2>;
-}
-function AddIncome() {
-    return <h2>Add Income</h2>;
-}
-function addAvailable() {
-    return <h2>addAvailable</h2>;
-}
-function AddInvestment() {
-    return <h2>Add Investment</h2>;
-}
-function App() {
-    return (
-        <Router>
-            <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/app/datos/dashboard.js">Dashboard</Link>
-                        </li>
-                        <li>
-                            <Link to="/app/datos/addIncome.mjs">Add Income</Link>
-                        </li>
-                        <li>
-                            <Link to="/app/datos/addAvailable">Add Available</Link>
-                        </li>
-                        <li>
-                            <Link to="/app/datos/addInvestment.mjs">Add Investment</Link>
-                        </li>
-                    </ul>
-                </nav>
+    <section id="home">
+        <h1>¡Bienvenido a "FinanzasMóvil" – Tu Compañero Financiero Integral!</h1>
+        <p>FinanzasMóvil es una aplicación diseñada para brindarte un control total sobre tus finanzas, 
+            ofreciéndote una experiencia completa de manejo financiero directamente desde la palma de tu mano..</p>
+        <p>Dinero Disponible al Instante:
+        Nuestra aplicación te proporciona un vistazo rápido y fácil al dinero disponible en tus cuentas. 
+        Ya sea que estés en casa, en el trabajo o de viaje, podrás conocer tu saldo actual, realizar un seguimiento de tus gastos y planificar tus próximas transacciones con la comodidad de un solo toque.</p>
+        <p>Gestión de Ingresos Simplificada:
+            FinanzasMóvil simplifica la gestión de tus ingresos al ofrecerte una visión clara y detallada de tus flujos de efectivo. 
+            Puedes registrar tus ingresos de manera rápida y categorizarlos para un análisis más profundo. Además, la aplicación te notifica sobre entradas de dinero, ayudándote a mantenerte al tanto de tus finanzas de manera proactiva.</p>
+        <p>Seguimiento de Inversiones en Tiempo Real:
+            Para aquellos que buscan maximizar su dinero, FinanzasMóvil permite el seguimiento en tiempo real de tus inversiones. 
+            Desde acciones hasta fondos mutuos, la aplicación te brinda una visión integral de cómo están evolucionando tus inversiones. </p>
+    </section>
 
-                <Switch>
-                    <Route path="/app/datos/dashboard.js" exact component={Dashboard} />
-                    <Route path="/app/datos/addIncome.mjs" component={AddIncome} />
-                    <Route path="/app/datos/addExpense.mjs" component={AddAvailable} />
-                    <Route path="/app/datos/addInvestment.mjs" component={AddInvestment} />
-                </Switch>
-            </div>
-        </Router>
-    );
-}
-    ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+    <section id="dashboard">
+            <p>Dinero disponible: <span id="disponible">0</span></p>
+            <p>Ingreso: <span id="ingreso">0</span></p>
+            <p>Inversiones: <span id="inversiones">0</span></p>
+
+        <h2>Agregar ingreso</h2>
+        <form id="ingresoForm" onsubmit="handleSubmit(event)">
+            <label for="ingresoInput">Monto:</label>
+            <input type="number" id="ingresoInput" name="ingreso" required>
+            <button type="submit">Agregar</button>
+        </form>
+        <h2>Agregar inversión</h2>
+        <form id="inversionForm" onsubmit="handleSubmit(event)">
+            <label for="inversionInput">Monto:</label>
+            <input type="number" id="inversionInput" name="inversion" required>
+            <button type="submit">Agregar</button>
+        </form>
+    </section>
+
+    <section id="inversiones">
+        <h3>Las inveriones mas comunes son las siguientes:</h3>
+        <p>
+            Mercado de valores: Puedes invertir en acciones de empresas que cotizan en bolsa. 
+            Este mercado ofrece la posibilidad de obtener rendimientos a través de la apreciación del valor de las acciones y el pago de dividendos.
+        </p>
+        <p>
+            Bonos: Los bonos son valores de deuda emitidos por gobiernos, 
+            empresas u otras entidades. Los inversores reciben pagos de intereses periódicos y, al vencimiento, recuperan el capital invertido.
+        </p>
+        <p>
+            Bienes raíces: 
+            Invertir en propiedades puede proporcionar ingresos regulares a través de alquileres y ganancias de capital a medida que el valor de la propiedad aumenta con el tiempo.
+        </p>
+        <p>
+            Criptomonedas: Las criptomonedas, como Bitcoin y Ethereum, han ganado popularidad como activos digitales. 
+            Sin embargo, son inversiones volátiles y arriesgadas, por lo que es esencial investigar y entender este mercado antes de invertir.
+        </p>
+        <p>
+            Crowdfunding inmobiliario: Plataformas de crowdfunding permiten a inversores participar en proyectos inmobiliarios con una inversión relativamente baja, 
+            proporcionando potencialmente beneficios a través de alquileres y ganancias de capital.
+        </p>
+        <p>
+            Dónde invertir depende de tu situación financiera y objetivos. Antes de tomar decisiones, es crucial entender completamente las opciones disponibles y considerar tus metas a corto y largo plazo. 
+            Además, siempre es recomendable consultar con un asesor financiero para obtener orientación personalizada basada en tu situación específica.
+        </p>
+    </section>
+
+    <footer>
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos. Nuestro equipo de atención al cliente está aquí para ayudar.</p>
+        <form id="contact-form" method="post" action="/contact">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</footer>
+
+    <script type="module" src="/ProyectoWebAvanzado/codigo/main.mjs"></script>
+    <script type="module" src="/ProyectoWebAvanzado/app/index.mjs"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>

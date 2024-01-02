@@ -1,20 +1,27 @@
 {
-"main": "/codigo/main.mjs",
-"scripts": {
-   "start": "/codigo/main.mjs",
-   "start:server": "node server.js",
-   "build": "react-scripts build",
-   "test": "react-scripts test",
-   "eject": "react-scripts eject"
-},
-"author": "",
-"license": "ISC",
-"devDependencies": {
-   "typescript": "^4.4.2"
-},
-"dependencies": {
-   "@types/node": "^16.7.0",
-   "react-router-dom": "^6.21.1"
-},
-"types": "dist/index.d.ts"
+   "main": "./app/app.mjs",
+   "name": "Financial Managment",
+   "version": "1.0.0",
+   "description": "App para registrar tus ingresos,dinero disponible y tus inversiones",
+   "scripts": {
+      "start:server": "node app/server.mjs",
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
+   },
+   "keywords": [],
+   "license": "ISC",
+   "type": "module",
+
+   "dependencies": {
+      "@types/node": "^16.7.0",
+      "express": "^4.18.2",
+      "fs": "^0.0.1-security",
+      "path": "^0.12.7",
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0",
+      "react-router-dom": "^6.21.1"
+   },
+   "types": "dist/index.d.ts"
 }

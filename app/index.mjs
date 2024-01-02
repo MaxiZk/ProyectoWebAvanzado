@@ -1,15 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import App from './app';
-import rootReducer from './reducers';
+// app/index.mjs
+export class Ingreso {
+    constructor(monto) {
+        this.monto = monto;
+    }
 
-const store = createStore(rootReducer);
+    agregarIngreso() {
+        // Implement your logic here to update the database
+        const ingresoActual = parseFloat(document.getElementById('ingreso').textContent);
+        const nuevoIngreso = ingresoActual + this.monto;
+        document.getElementById('ingreso').textContent = nuevoIngreso.toFixed(2);
+        document.getElementById('disponible').textContent = nuevoIngreso.toFixed(2);
+    }
+}
 
-ReactDOM.render(
- <Provider store={store}>
-    <App />
- </Provider>,
- document.getElementById('root')
-);
+export class Inversion {
+    constructor(monto) {
+        this.monto = monto;
+    }
+
+    agregarInversion() {
+        // Implement your logic here to update the database
+        const inversionActual = parseFloat(document.getElementById('inversiones').textContent);
+        const nuevaInversion = inversionActual + this.monto;
+        document.getElementById('inversiones').textContent = nuevaInversion.toFixed(2);
+    }
+}

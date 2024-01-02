@@ -1,26 +1,21 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
-const app = express();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-app.use(cors());
-app.use(bodyParser.json());
+const express = await import('express');
+const app = express.default();
 
-app.get('/app/datos/available.mjs', (req, res) => {
-const available = [
-    { id: 1, title: 'available', amount: 500, date: '2021-07-01' },
-    { id: 2, title: 'available', amount: 700, date: '2021-07-02' },
-];
+app.use(express.static(path.join(__dirname, 'build')));
 
-res.json(available);
+app.get('/*', function (req, res) {
+ res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.post('/app/datos/available.mjs', (req, res) => {
-console.log('New available added:', req.body);
-res.status(201).send();
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+ console.log(`Server is running on port ${PORT}`);
 });
-
-const PORT = process.env.PORT || 5500;
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

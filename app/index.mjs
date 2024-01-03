@@ -1,27 +1,37 @@
-// app/index.mjs
-export class Ingreso {
-    constructor(monto) {
-        this.monto = monto;
-    }
-
-    agregarIngreso() {
-        // Implement your logic here to update the database
-        const ingresoActual = parseFloat(document.getElementById('ingreso').textContent);
-        const nuevoIngreso = ingresoActual + this.monto;
-        document.getElementById('ingreso').textContent = nuevoIngreso.toFixed(2);
-        document.getElementById('disponible').textContent = nuevoIngreso.toFixed(2);
-    }
-}
-
-export class Inversion {
-    constructor(monto) {
-        this.monto = monto;
-    }
-
-    agregarInversion() {
-        // Implement your logic here to update the database
-        const inversionActual = parseFloat(document.getElementById('inversiones').textContent);
-        const nuevaInversion = inversionActual + this.monto;
-        document.getElementById('inversiones').textContent = nuevaInversion.toFixed(2);
-    }
-}
+export const formatNumber = (number) => {
+    return new Intl.NumberFormat("es-ES").format(number);
+   };
+   
+   export const addToDataList = (id, value) => {
+    const list = document.getElementById(id);
+    const option = document.createElement("option");
+    option.value = value;
+    list.appendChild(option);
+   };
+   
+   export const addInvestment = (value) => {
+    const investments = JSON.parse(localStorage.getItem("investments")) || [];
+    investments.push(value);
+    localStorage.setItem("investments", JSON.stringify(investments));
+   };
+   
+   export const getAverage = (totalInvestments) => {
+    const investments = JSON.parse(localStorage.getItem("investments")) || [];
+    const sum = investments.reduce((a, b) => a + b, 0);
+    return sum / totalInvestments;
+   };
+   
+   export const getTotalInvestments = () => {
+    const investments = JSON.parse(localStorage.getItem("investments")) || [];
+    return investments.length;
+   };
+   
+   export const getInvestmentTable = () => {
+    const investments = JSON.parse(localStorage.getItem("investments")) || [];
+    let table = "<table><tr><th>Monto</th></tr>";
+    investments.forEach((investment) => {
+       table += `<tr><td>${formatNumber(investment)}</td></tr>`;
+    });
+    table += "</table>";
+    return table;
+   };

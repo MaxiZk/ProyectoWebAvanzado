@@ -1,32 +1,31 @@
-// ...
-import { createServer } from 'http';
-import { parse } from 'url';
-import { resolve } from 'path';
-import { readFile } from 'fs/promises';
+import {
+    formatNumber,
+    addToDataList,
+    addInvestment,
+    getAverage,
+    getTotalInvestments,
+    getInvestmentTable
+} from "/ProyectoWebAvanzado/app/index.mjs";
 
-// ...
-
-createServer(async (request, response) => {
-    // ...
-
-    const urlPath = parse(request.url).pathname;
-
-    switch (urlPath) {
-        // ...
-        case '/ingreso':
-        case '/inversion':
-            let body = [];
-            request.on('data', (chunk) => {
-                body.push(chunk);
-            }).on('end', async () => {
-                body = Buffer.concat(body).toString();
-                // You can do whatever you want with the body data, for example, store it in a database.
-                response.writeHead(200, { 'Content-Type': 'text/html' });
-                response.end('Transacción agregada con éxito');
-            });
-            break;
-        default:
-            response.writeHead(404, { 'Content-Type': 'text/html' });
-            response.end('Página no encontrada');
-    }
-}).listen(3000);
+   // DOM elements
+   const ingresoInput = document.getElementById("ingresoInput");
+   const inversionForm = document.getElementById("inversionForm");
+   const investmentTable = document.getElementById("investmentTable");
+   
+   // Function to handle form submissions
+   function handleSubmit(event) {
+    event.preventDefault();
+   
+    // Calculate average
+    const totalInvestments = getTotalInvestments();
+    const average = getAverage(totalInvestments);
+   
+    // Update average display
+    document.getElementById("averageDisplay").textContent = formatNumber(average);
+   
+    // Clear form input
+    inversionForm.reset();
+   }
+   
+   // Event listeners
+   inversionForm.addEventListener("submit", handleSubmit);

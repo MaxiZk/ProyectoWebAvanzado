@@ -1,0 +1,89 @@
+
+/* Estilos del header */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+p {
+    color: #333;
+    font-size: 1.125rem;
+    text-align: justify;
+    margin: 1.5rem 2rem;
+}
+
+button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-color: #007BFF;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin: 1.5rem auto;
+    cursor: pointer;
+}
+
+section {
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}

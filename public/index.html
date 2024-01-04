@@ -12,9 +12,9 @@
     <nav> 
         <ul> 
             <li><a href="#home">Home</a>
-            </li> <li><a href="#dashboard">Finanzas</a>
-            </li> <li><a href="#inversioes">Inversiones</a>
-            </li> <li><a href="#contacto">Contacto</a></li> 
+            </li> <li><a href="./html/Finanzas.html">Finanzas</a>
+            </li> <li><a href="./html/Inversiones.html">Inversiones</a>
+            </li> <li><a href="./html/Contacto.html">Contacto</a></li> 
         </ul> 
     </nav>
 </header>
@@ -34,70 +34,9 @@
             Desde acciones hasta fondos mutuos, la aplicación te brinda una visión integral de cómo están evolucionando tus inversiones. </p>
     </section>
 
-    <section id="dashboard">
-            <p>Dinero disponible: <span id="disponible">0</span></p>
-            <p>Ingreso: <span id="ingreso">0</span></p>
-            <p>Inversiones: <span id="inversiones">0</span></p>
-
-        <h2>Agregar ingreso</h2>
-        <form id="ingresoForm" onsubmit="handleSubmit(event)">
-            <label for="ingresoInput">Monto:</label>
-            <input type="number" id="ingresoInput" name="ingreso" required>
-            <button type="submit">Agregar</button>
-        </form>
-        <h2>Agregar inversión</h2>
-        <form id="inversionForm" onsubmit="handleSubmit(event)">
-            <label for="inversionInput">Monto:</label>
-            <input type="number" id="inversionInput" name="inversion" required>
-            <button type="submit">Agregar</button>
-        </form>
-    </section>
-
-    <section id="inversiones">
-        <h3>Las inveriones mas comunes son las siguientes:</h3>
-        <p>
-            Mercado de valores: Puedes invertir en acciones de empresas que cotizan en bolsa. 
-            Este mercado ofrece la posibilidad de obtener rendimientos a través de la apreciación del valor de las acciones y el pago de dividendos.
-        </p>
-        <p>
-            Bonos: Los bonos son valores de deuda emitidos por gobiernos, 
-            empresas u otras entidades. Los inversores reciben pagos de intereses periódicos y, al vencimiento, recuperan el capital invertido.
-        </p>
-        <p>
-            Bienes raíces: 
-            Invertir en propiedades puede proporcionar ingresos regulares a través de alquileres y ganancias de capital a medida que el valor de la propiedad aumenta con el tiempo.
-        </p>
-        <p>
-            Criptomonedas: Las criptomonedas, como Bitcoin y Ethereum, han ganado popularidad como activos digitales. 
-            Sin embargo, son inversiones volátiles y arriesgadas, por lo que es esencial investigar y entender este mercado antes de invertir.
-        </p>
-        <p>
-            Crowdfunding inmobiliario: Plataformas de crowdfunding permiten a inversores participar en proyectos inmobiliarios con una inversión relativamente baja, 
-            proporcionando potencialmente beneficios a través de alquileres y ganancias de capital.
-        </p>
-        <p>
-            Dónde invertir depende de tu situación financiera y objetivos. Antes de tomar decisiones, es crucial entender completamente las opciones disponibles y considerar tus metas a corto y largo plazo. 
-            Además, siempre es recomendable consultar con un asesor financiero para obtener orientación personalizada basada en tu situación específica.
-        </p>
-    </section>
-
     <footer>
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>Si tiene alguna pregunta o necesita ayuda, no dude en contactarnos. Nuestro equipo de atención al cliente está aquí para ayudar.</p>
-        <form id="contact-form" method="post" action="/contact">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-            <br>
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <br>
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" required></textarea>
-            <br>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        <p>&copy; 2022 Finance Tracker. Todos los derechos reservados.</p>
+        <p>Preguntas frecuentes | Términos y condiciones | Política de privacidad</p>
 </footer>
 
     <script type="module" src="/ProyectoWebAvanzado/codigo/main.mjs"></script>
